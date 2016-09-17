@@ -2,7 +2,7 @@
 
 
 #if WIN32 && _DEBUG
-#pragma comment( linker, "/ENTRY:\"mainCRTStartup\" ")
+#pragma comment( linker, "/subsystem:\"console\" /ENTRY:\"mainCRTStartup\" ")
 #endif
 
 

@@ -18,9 +18,6 @@ enum EMLogTag
     ERROR,
 };
 
-#define SaLog(tag, msg)
-
-
 struct None { };
 
 template <typename First, typename Second>

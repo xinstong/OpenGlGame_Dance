@@ -44,9 +44,10 @@ int SaOpenGlViewer::Init()
     _window = glfwCreateWindow(_winWidth, _winHeight, "LearnOpenGL", nullptr, nullptr);
     if (_window == nullptr)
     {
-        std::cout << "Failed to create GLFW window" << std::endl;
+        SaLog(ERROR, "Failed to create GLFW window");
         glfwTerminate();
-        return -1;
+        iRes = -1;
+        return iRes;
     }
     glfwMakeContextCurrent(_window);
 
@@ -55,8 +56,9 @@ int SaOpenGlViewer::Init()
     // Initialize GLEW to setup the OpenGL Function pointers
     if (glewInit() != GLEW_OK)
     {
-        std::cout << "Failed to initialize GLEW" << std::endl;
-        return -1;
+        SaLog(ERROR, "Failed to initialize GLEW");
+        iRes = -1;
+        return iRes;
     }
 
     glfwGetFramebufferSize(_window, &_winWidth, &_winHeight);
@@ -64,7 +66,6 @@ int SaOpenGlViewer::Init()
 
     // set callback
     glfwSetKeyCallback(_window, key_callback);
-
 
     return iRes;
 }

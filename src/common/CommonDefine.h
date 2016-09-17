@@ -51,7 +51,7 @@
     }                                       \
     else                                    \
     {                                       \
-        /*SaLog(ERROR, "NULL pointer call"); */ \
+        SaLog(ERROR, "NULL pointer call");  \
     }                                       \
 
 #endif //SA_COMMON_COMMON_DEFINE__H
